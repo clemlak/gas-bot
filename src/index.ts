@@ -22,13 +22,13 @@ interface GasNowResponse {
 dotenv.config();
 
 const {
-  token,
+  TOKEN,
 } = process.env;
 
 const client = new Client();
 
 client.on('ready', () => {
-  console.log('I am ready');
+  console.log('I am ready!');
 });
 
 client.on('message', async (message) => {
@@ -74,7 +74,7 @@ client.on('message', async (message) => {
   }
 });
 
-client.login(token);
+client.login(TOKEN);
 
 client.setInterval(async () => {
   try {
@@ -94,7 +94,7 @@ client.setInterval(async () => {
     const presence = await client.user?.setPresence({
       activity: {
         type: 'WATCHING',
-        name: `🚀 ${rapidGas[0]} | 🚄 ${fastGas[0]} | 🚌 ${standardGas[0]} | 🐢 ${slowGas[0]}`,
+        name: `${rapidGas[0]} 🚀 | ${fastGas[0]} 🚄 | ${standardGas[0]} 🚌 | ${slowGas[0]} 🐢`,
       },
       status: 'online',
     });

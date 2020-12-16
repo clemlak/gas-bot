@@ -1,5 +1,5 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
-    token: string;
+    TOKEN: string;
   }
 }
